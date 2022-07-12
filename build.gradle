@@ -12,6 +12,17 @@ repositories {
 }
 
 dependencies {
+    implementation group: 'com.beanstalk.core', name: 'beanstalk-core', version: '0.1'
+
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+
+    // https://mvnrepository.com/artifact/io.micronaut.data/micronaut-data-processor
+    implementation group: 'io.micronaut.data', name: 'micronaut-data-processor', version: '3.4.3'
+
+    annotationProcessor("io.micronaut.data:micronaut-data-hibernate-jpa")
+    implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
     annotationProcessor("io.micronaut:micronaut-http-validation")
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-jackson-databind")
@@ -19,6 +30,8 @@ dependencies {
     implementation("jakarta.annotation:jakarta.annotation-api")
     runtimeOnly("ch.qos.logback:logback-classic")
     implementation("io.micronaut:micronaut-validation")
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    implementation('jakarta.persistence:jakarta.persistence-api:3.1.0')
 
     implementation group: 'com.google.cloud', name: 'google-cloud-pubsub', version: '1.113.5'
 
@@ -26,10 +39,14 @@ dependencies {
 
     implementation 'com.google.cloud:google-cloud-bigtable'
 
+    // https://mvnrepository.com/artifact/com.google.cloud/google-cloud-spanner-jdbc
+    implementation group: 'com.google.cloud', name: 'google-cloud-spanner-jdbc', version: '2.7.3'
+
+    // https://mvnrepository.com/artifact/com.google.cloud/google-cloud-spanner-hibernate-dialect
+    implementation group: 'com.google.cloud', name: 'google-cloud-spanner-hibernate-dialect', version: '1.5.3'
+
     // https://mvnrepository.com/artifact/commons-validator/commons-validator
     implementation group: 'commons-validator', name: 'commons-validator', version: '1.7'
-
-    implementation group: 'org.beanstalk', name: 'beanstalk-data-types', version: '1.0'
 
     // https://mvnrepository.com/artifact/joda-time/joda-time
     implementation group: 'joda-time', name: 'joda-time', version: '2.10.12'
